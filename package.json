@@ -1,0 +1,16 @@
+{
+  "name": "gym-db",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "author": "Aarzoo Sharma",
+  "license": "MIT",
+  "dependencies": {
+    "sequelize": "^6.37.7",
+    "sequelize-cli": "^6.6.5"
+  },
+  "scripts": {
+    "db:migrate": "sequelize db:migrate",
+    "db:migrate:undo": "sequelize db:migrate:undo",
+    "db:migrate:undo:all": "sequelize db:migrate:undo:all"
+  }
+}
