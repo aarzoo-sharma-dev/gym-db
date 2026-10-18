@@ -1,6 +1,8 @@
 const fs = require("fs");
 const path = require("path");
 const Sequelize = require("sequelize");
+const dotenv = require("dotenv");
+dotenv.config();
 
 let models;
 
@@ -70,7 +72,14 @@ Object.keys(models).forEach((modelName) => {
   }
 });
 
-const sequelizeLoader = async ({ app }) => {};
+const sequelizeLoader = async ({ app }) => {
+  try {
+    await sequelize.authenticate();
+    console.log("Database connection has been established successfully.");
+  } catch (error) {
+    console.error("Unable to connect to the database:", error);
+  }
+};
 
 module.exports = {
   sequelize,
